@@ -38,7 +38,7 @@ vector<int> Solution::twoSum2(vector<int>& nums, int target)
 
 void Solution::twoSumTest()
 {
-    vector<int> SourceVec = { 2, 7, 11, 15 };
+    vector<int> SourceVec = { 2, 7, 11, 19 };
     int target = 9;
     vector<int> ResuleVec;
 
