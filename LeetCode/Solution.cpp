@@ -24,8 +24,8 @@ vector<int> Solution::twoSum2(vector<int>& nums, int target)
     for (int i = 0; i < nums.size(); i++)
     {
         if (m.find(nums[i]) != m.end()) {
+            ResultVec.push_back(m[nums[i]]);
             ResultVec.push_back(i);
-            ResultVec.push_back(nums[i]);
             return ResultVec;
         }
         else {
@@ -38,8 +38,8 @@ vector<int> Solution::twoSum2(vector<int>& nums, int target)
 
 void Solution::twoSumTest()
 {
-    vector<int> SourceVec = { 2, 7, 11, 19 };
-    int target = 9;
+    vector<int> SourceVec = { 3,2,4 };
+    int target = 6;
     vector<int> ResuleVec;
 
     cout << "twoSumTest1 Begin " << endl;

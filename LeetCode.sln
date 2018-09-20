@@ -7,16 +7,20 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LeetCode", "LeetCode\LeetCo
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29595102-F0F9-4D2A-9D04-7EA5F83A26C9}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{29595102-F0F9-4D2A-9D04-7EA5F83A26C9}.Debug|x64.ActiveCfg = Debug|x64
 		{29595102-F0F9-4D2A-9D04-7EA5F83A26C9}.Debug|x64.Build.0 = Debug|x64
 		{29595102-F0F9-4D2A-9D04-7EA5F83A26C9}.Debug|x86.ActiveCfg = Debug|Win32
 		{29595102-F0F9-4D2A-9D04-7EA5F83A26C9}.Debug|x86.Build.0 = Debug|Win32
+		{29595102-F0F9-4D2A-9D04-7EA5F83A26C9}.Release|Any CPU.ActiveCfg = Release|Win32
 		{29595102-F0F9-4D2A-9D04-7EA5F83A26C9}.Release|x64.ActiveCfg = Release|x64
 		{29595102-F0F9-4D2A-9D04-7EA5F83A26C9}.Release|x64.Build.0 = Release|x64
 		{29595102-F0F9-4D2A-9D04-7EA5F83A26C9}.Release|x86.ActiveCfg = Release|Win32
@@ -24,5 +28,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00B18804-1F31-47CD-8325-DFF13A54A040}
 	EndGlobalSection
 EndGlobal
