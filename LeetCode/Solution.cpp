@@ -1,7 +1,85 @@
 #include"Solution.h"
 
-ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2) {
 
+
+int Solution::lengthOfLongestSubstring(string s)
+{
+    TestStringFor3 T;
+    int iMaxLen = 0;
+    for (int i= 0; i<s.length(); i++)
+    {
+        for (int j=i; j < s.length() && T.insert(&s[j]); j++)
+        {
+            if (iMaxLen < T.iSize)
+            {
+                iMaxLen = T.iSize;
+            }
+        }
+
+    }
+    return iMaxLen;
+}
+int Solution::lengthOfLongestSubstring2(string s)
+{
+    return 0;
+}
+
+ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2)
+{
+    ListNode* p1 = l1, *p2 = l2;
+    ListNode* pResult = NULL;
+    ListNode* pLast = NULL;
+    int iFlag = 0;
+    int iValue = 0;
+
+    while (p1 != NULL || p2 != NULL)
+    {
+        iValue = 0;
+        ListNode* pTmp = new ListNode(0);
+        if (pResult == NULL)
+        {
+            pResult = pTmp;
+        }
+        else
+        {
+            pLast->next = pTmp;
+        }
+        if (p1 != NULL && p2 != NULL)
+        {
+            iValue = p1->val + p2->val + iFlag;
+
+            p1 = p1->next;
+            p2 = p2->next;
+        }
+        else
+        {
+            ListNode* p3 = p1 ? p1 : p2;
+            iValue = p3->val + iFlag;
+            p1 == NULL ? p2 = p2->next : p1=p1->next;
+        }
+
+        if (iValue >= 10)
+        {
+            iValue %= 10;
+            iFlag = 1;
+        }
+        else
+        {
+            iFlag = 0;
+        }
+        pTmp->val = iValue;
+        pLast = pTmp;
+
+    }
+
+    if (iFlag)
+    {
+        ListNode* pTmp = new ListNode(iFlag);
+        pLast->next = pTmp;
+    }
+
+
+    return pResult;
 }
 
 vector<int> Solution::twoSum1(vector<int>& nums, int target)
@@ -100,7 +178,7 @@ int Solution::romanToInt(string s)
             {
                 iResult += 100;
             }
-            break; 
+            break;
         case 'L':
             if (s[i - 1] == 'X')
             {
@@ -112,15 +190,15 @@ int Solution::romanToInt(string s)
             }
             break;
         case 'X':
-            if (s[i-1] == 'I')
+            if (s[i - 1] == 'I')
             {
                 iResult += 8;
-            } 
+            }
             else
             {
                 iResult += 10;
             }
-            break;      
+            break;
         case 'V':
             if (s[i - 1] == 'I')
             {
@@ -129,7 +207,7 @@ int Solution::romanToInt(string s)
             else
             {
                 iResult += 5;
-            }          
+            }
             break;
         case 'I':
             iResult += 1;
@@ -153,7 +231,7 @@ string Solution::longestCommonPrefix(vector<string>& strs)
     sCommonPrefix = *it;
     for (; it != strs.end(); it++)
     {
-        for (int i=0; i<sCommonPrefix.length(); i++)
+        for (int i = 0; i < sCommonPrefix.length(); i++)
         {
             if (sCommonPrefix[i] == (*it)[i])
             {
@@ -176,9 +254,9 @@ ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
 {
     ListNode *ResultList = NULL;
     ListNode *p = ResultList;
-    while (l1 != NULL || l2!=NULL)
+    while (l1 != NULL || l2 != NULL)
     {
-        if (l1 == NULL && p!= NULL)
+        if (l1 == NULL && p != NULL)
         {
             p->next = l2;
             break;
@@ -220,4 +298,4 @@ ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
         }
     }
     return ResultList;
-    }
+}

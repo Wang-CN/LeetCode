@@ -10,15 +10,20 @@ using namespace std;
 
 int main()
 {
-    cout << "Input the AllFile Name:" << endl;
-    cin >> sAllFile;
-    cout << "Input the OracleFile Name:" << endl;
-    cin >> sNPInOracle;
+    int a = 9;
+    int b = 5;
+    int c = a^ b;
+    cout << sizeof(a) << endl;
+    cout << hex  << c << endl;
+    cout << dec <<c << endl;
 
+    int d = 2;
+    cout << (d << 64) << endl;
+    int f = 0x70000000;
+    int g = 0x80000000;
 
-
-    CompareDate(sAllFile, sNPInOracle);
-
+    cout<<f << (f << 65) << endl;
+    cout<< dec << g << " aaaa "<< (g << 2) << endl;
     system("pause");
 
 }

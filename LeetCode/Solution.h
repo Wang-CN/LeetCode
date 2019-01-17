@@ -8,7 +8,31 @@ struct ListNode {
     ListNode *next;
     ListNode(int x) : val(x), next(NULL) {};
 };
-
+class TestStringFor3
+{
+public:
+    char *s[100] = { 0 };
+    int iSize = 0;
+    bool insert(char *a)
+    {
+        bool ret = true;
+        if (s[int(*a) - 32] != 0)
+        {
+            ret = false;
+            iSize = 0;
+            for (int i=0; i<100; i++)
+            {
+                s[i] = 0;
+            }
+        }
+        else
+        {
+            s[int(*a) - 32] = a;
+            iSize++;
+        }
+        return ret;
+    }
+};
 class Solution {
 public:
     //1.两数之和
@@ -19,6 +43,9 @@ public:
     //2. 两数相加
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 
+    //3. 无重复字符的最长子串
+    int lengthOfLongestSubstring(string s);
+    int lengthOfLongestSubstring2(string s);
     //13. 罗马数字转整数
     int romanToInt(string s);
 
